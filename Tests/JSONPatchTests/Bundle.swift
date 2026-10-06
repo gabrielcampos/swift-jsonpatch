@@ -21,5 +21,9 @@
 import Foundation
 
 extension Bundle {
+    #if SWIFT_PACKAGE
+    static let test = Bundle.module
+    #else
     static let test = Bundle(identifier: "scot.raymccrae.JSONPatchTests")!
+    #endif
 }
